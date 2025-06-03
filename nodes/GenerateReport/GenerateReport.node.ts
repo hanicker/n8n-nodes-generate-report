@@ -1,6 +1,5 @@
 import { IExecuteFunctions } from 'n8n-core';
 import {
-	IDataObject,
 	INodeExecutionData,
 	INodePropertyOptions,
 	INodeType,
@@ -97,23 +96,6 @@ export class GenerateReport implements INodeType {
 	};
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
-
-		const flattenJSON = (obj = {} as IDataObject, res = {} as IDataObject, extraKey = '' as string) => {
-			for(var key in obj){
-			   if(typeof obj[key] !== 'object'){
-				  res[extraKey + key] = obj[key];
-			   }else{
-				  if(Array.isArray(obj[key])){
-					 res[extraKey + key] = obj[key];
-				  }
-				  else{
-					 flattenJSON(obj[key] as IDataObject, res, `${extraKey}${key}.`);
-				  }
-			   };
-			};
-			return res;
-		 };
-
 		const items = this.getInputData();
 
 		const returnData: INodeExecutionData[] = [];
@@ -133,9 +115,9 @@ export class GenerateReport implements INodeType {
 			const data = this.getNodeParameter('data', itemIndex) as string;
 			const outputFileName = this.getNodeParameter('outputFileName', itemIndex) as string;
 			const convertToPDF = this.getNodeParameter('convertToPDF', itemIndex,false) as boolean;
-			let templateData;
+			let templateData: TemplateData;
 			try{
-				templateData = flattenJSON(JSON.parse(data)) as TemplateData;
+				templateData = JSON.parse(data);
 			}
 			catch(err){
 				throw new NodeOperationError(this.getNode(), 'Something went wrong while parsing the template data.' + err as string);
