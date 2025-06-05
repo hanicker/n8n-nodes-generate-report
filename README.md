@@ -17,7 +17,7 @@ The tags for lists/containers are the same as default.
 
 ## Developer
 
-Hi, 
+Hi,
 
 My name is Bram and I am the developer of this node.
 I am an independant consultant and expert partner of n8n.
@@ -36,7 +36,7 @@ For questions or issues with nodes, please open an issue on Github.
 
 ## Sponsor
 
-This node was developed for a client and they allowed me to make it public. 
+This node was developed for a client and they allowed me to make it public.
 
 Developed for [Energy SOAR](https://energysoar.com?ref=kr495s) - Security orchestration, automation and response tool.
 
@@ -61,4 +61,12 @@ Developed on an older version of n8n but since then tested on version 0.222.1
 
 ## Version history
 
-v1.0
+v1.0.0
+
+- Update `easy-template-x` dependency to latest version.
+- Don't flatten JSON before providing it to the template handler.<br>
+	This should provide support for `easy-template-x` plugins like the [link plugin](https://github.com/alonrbar/easy-template-x#link-plugin).
+
+v0.1.0
+
+Initial setup
