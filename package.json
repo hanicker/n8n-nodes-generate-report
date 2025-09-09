@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-generate-report-3",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Fill in DocX Template with Data from JSON object",
   "keywords": [
     "n8n-community-node-package"
@@ -47,7 +47,7 @@
     "typescript": "~4.8.4"
   },
   "dependencies": {
-    "easy-template-x": "^3.1.0",
+    "easy-template-x": "^6.2.1",
     "iconv-lite": "^0.6.3",
     "libreoffice-convert": "^1.4.1"
   }

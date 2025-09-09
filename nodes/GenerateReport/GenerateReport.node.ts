@@ -41,7 +41,7 @@ export class GenerateReport implements INodeType {
 		name: 'generateReport',
 		icon: 'file:report_template.svg',
 		group: ['transform'],
-		version: 1,
+		version: [1, 2],
 		description: 'Generate a report from a DocX Template and JSON data.',
 		defaults: {
 			name: 'Generate Report',
@@ -97,7 +97,6 @@ export class GenerateReport implements INodeType {
 	};
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
-
 		const flattenJSON = (obj = {} as IDataObject, res = {} as IDataObject, extraKey = '' as string) => {
 			for(var key in obj){
 			   if(typeof obj[key] !== 'object'){
@@ -112,7 +111,7 @@ export class GenerateReport implements INodeType {
 			   };
 			};
 			return res;
-		 };
+		};
 
 		const items = this.getInputData();
 
@@ -133,9 +132,15 @@ export class GenerateReport implements INodeType {
 			const data = this.getNodeParameter('data', itemIndex) as string;
 			const outputFileName = this.getNodeParameter('outputFileName', itemIndex) as string;
 			const convertToPDF = this.getNodeParameter('convertToPDF', itemIndex,false) as boolean;
-			let templateData;
+			let templateData: TemplateData;
 			try{
-				templateData = flattenJSON(JSON.parse(data)) as TemplateData;
+				const nodeVersion = this.getNode().typeVersion;
+
+				templateData = JSON.parse(data);
+
+				if (nodeVersion === 1) {
+					templateData = flattenJSON(templateData) as TemplateData;
+				}
 			}
 			catch(err){
 				throw new NodeOperationError(this.getNode(), 'Something went wrong while parsing the template data.' + err as string);
