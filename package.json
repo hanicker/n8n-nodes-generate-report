@@ -1,19 +1,19 @@
 {
-  "name": "n8n-nodes-generate-report-2",
+  "name": "n8n-nodes-generate-report-3",
   "version": "0.1.0",
   "description": "Fill in DocX Template with Data from JSON object",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/bramkn/n8n-nodes-generate-report-2.git",
+  "homepage": "https://github.com/bramkn/n8n-nodes-generate-report-3.git",
   "author": {
     "name": "Bram Knuever",
     "email": "bram@knitco.nl"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bramkn/n8n-nodes-generate-report-2.git"
+    "url": "https://github.com/bramkn/n8n-nodes-generate-report-3.git"
   },
   "main": "index.js",
   "scripts": {
