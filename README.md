@@ -1,12 +1,12 @@
 ![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
-# n8n-nodes-generate-report
+# n8n-nodes-generate-report-2
 
 This is an n8n community node. It lets you fill a docx file with data using placeholders.
 
 ![image](https://user-images.githubusercontent.com/74856333/231965567-1669d63f-8cca-47b0-9566-9dbc1555915d.png)
 
-![2024-03-27 13_46_58-Window](https://github.com/bramkn/n8n-nodes-generate-report/assets/74856333/967a568a-8fdf-4fb1-b782-8799a6430112)
+![2024-03-27 13_46_58-Window](https://github.com/bramkn/n8n-nodes-generate-report-2/assets/74856333/967a568a-8fdf-4fb1-b782-8799a6430112)
 
 For this node this package was used: https://www.npmjs.com/package/easy-template-x
 For more info on it's use please have a look overthere.
